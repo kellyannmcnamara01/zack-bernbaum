@@ -1,0 +1,67 @@
+# Composer files
+composer.phar
+.sass-cache/
+.settings/
+**/composer.lock
+
+# Local configs
+config/autoload/*.local.php
+
+# Binary gettext files
+*.mo
+*.DS_Store
+
+# Data
+data/logs/
+data/cache/
+data/sessions/
+data/tmp/
+temp/
+
+#Doctrine 2
+data/DoctrineORMModule/Proxy/
+data/DoctrineORMModule/cache/
+*.php~
+
+# Legacy ZF1
+demos/
+extras/documentation
+library/Zend/
+
+# Node
+node_modules/
+public/node_modules
+
+# MISC FILES
+.cache
+.idea
+*.esproj
+*.sublime-workspace
+*.sublime-project
+*.tmproj
+*.tmproject
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+config.codekit3
+prepros-6.config
+
+# Gulp
+.tmp/
+
+# Craft Environment
+.vagrant/
+
+# Craft Storage
+craft3/storage/
+craft3/web/cpresources/
+craft/storage/
+craft/web/cpresources/
+
+# Craft Imager Transforms
+public/imager/*
+web/imager/*
+craft3/public/imager/*
+craft3/web/imager/*
