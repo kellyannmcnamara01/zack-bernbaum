@@ -1,0 +1,25 @@
+<section class="featured-content">
+    <div class="featured-content__copy">
+        {% if content.featuredTitle|length %}
+            <h3>Featured <strong>Clients</strong></h3>
+        {% endif %}
+        {% if content.featuredStats|length %}
+            <div class="featured-content__stats">
+                {% for stat in content.featuredStats %}
+                    <div class="featured-content__stat">
+                        <span>Total Clients</span>
+                        <span><span>[ </span>00<span> ]</span></span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    {% if content.featuredVisuals|length %}
+        <div class="featured-content__imgs">
+            {% for img in content.featuredVisuals %}
+                {% set imgSrc = img.url %}
+                <div class="featured-content__img"><img src="{{ imgSrc }}"></div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>

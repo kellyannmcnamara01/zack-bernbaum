@@ -25,31 +25,7 @@
 
     {% if entry.featuredContent|length %}
         {% for content in entry.featuredContent %}
-            <section class="feautred-content">
-                <div class="feautred-content__copy">
-                    {% if content.featuredTitle|length %}
-                        <h3>Featured <strong>Clients</strong></h3>
-                    {% endif %}
-                    {% if content.featuredStats|length %}
-                        <div class="feautred-content__stats">
-                            {% for stat in content.featuredStats %}
-                                <div class="feautred-content__stat">
-                                    <span>Total Clients</span>
-                                    <span><span>[ </span>00<span> ]</span></span>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-                {% if content.featuredVisuals|length %}
-                    <div class="feautred-content__imgs">
-                        {% for img in content.featuredVisuals %}
-                            {% set imgSrc = img.url %}
-                            <div class="feautred-content__img"><img src="{{ imgSrc }}"></div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </section>
+            {# {% include 'partials/feautred-content-row' with {'content' : content} %} #}
         {% endfor %}
     {% endif %}
 
