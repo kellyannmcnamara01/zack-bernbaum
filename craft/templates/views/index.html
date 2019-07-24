@@ -2,36 +2,56 @@
 {% block content %}
 
 
-
     <section class="page-header">
-        <p>I’m an award winning, story driven director.</p>
-        <p>I focus on capturing authentic performances, rich aesthetics,and unique tones.</p>
-        <p>Nice to meet you.</p>
+        <h1 class="site-title">Zack <strong>Bernbaum</strong></h1>
+        <h2 class="site-subtitle">Storyteller. Director.</h2>
+
+        {% if entry.pageHeaderCopy|length %}
+            <div class="page-header-copy">{{ entry.pageHeaderCopy }}</div>
+        {% endif %}
     </section>
 
 
-
-    <div class="featured-video">
-        <iframe src="https://player.vimeo.com/video/152912229" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
-
-
-
-    <section class="feautred-content">
-        <div class="feautred-content__copy">
-            <h3>Featured <strong>Clients</strong></h3>
-            <div class="feautred-content__stats">
-                <div class="feautred-content__stat">
-                    <span>Total Clients</span>
-                    <span><span>[ </span>00<span> ]</span></span>
+    {% if entry.video|length %}
+        {% for video in entry.video %}
+            <div class="featured-video">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/{{ video.vimeoId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
                 </div>
             </div>
-        </div>
-        <div class="feautred-content__imgs">
-            <div class="feautred-content__img"><img src=""></div>
-        </div>
-    </section>
+        {% endfor %}
+    {% endif %}
 
+
+    {% if entry.featuredContent|length %}
+        {% for content in entry.featuredContent %}
+            <section class="feautred-content">
+                <div class="feautred-content__copy">
+                    {% if content.featuredTitle|length %}
+                        <h3>Featured <strong>Clients</strong></h3>
+                    {% endif %}
+                    {% if content.featuredStats|length %}
+                        <div class="feautred-content__stats">
+                            {% for stat in content.featuredStats %}
+                                <div class="feautred-content__stat">
+                                    <span>Total Clients</span>
+                                    <span><span>[ </span>00<span> ]</span></span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                {% if content.featuredVisuals|length %}
+                    <div class="feautred-content__imgs">
+                        {% for img in content.featuredVisuals %}
+                            {% set imgSrc = img.url %}
+                            <div class="feautred-content__img"><img src="{{ imgSrc }}"></div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </section>
+        {% endfor %}
+    {% endif %}
 
 
 {% endblock %}

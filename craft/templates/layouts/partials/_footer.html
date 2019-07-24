@@ -1,16 +1,26 @@
 <footer class="footer">
-	<span class="footer__title">Any Projects, Collaborations, or just want to chat? <a href="">Email Me.</a></span>
+	
+	{% if footerContent.footerCta|length %}
+		<span class="footer__title">{{ footerContent.footerCta }}</span>
+	{% endif %}
 	<div class="footer__links">
-		<div class="footer__links-contact">
-			<a href="">416 000 0000</a>
-			<a href="mailto:zack@ezeqialproductions.com">zack@ezeqialproductions.com</a>
-		</div>
+
+
+		{% if footerContent.contactLinks|length %}
+			<div class="footer__links-contact">
+				{% for link in footerContent.contactLinks %}
+					<a href="{{ link.linkUrl.getUrl() }}">{{ link.linkTitle }}</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+
 		<div class="footer__links-social">
-			<a href="" taget="_blank"><i class="icon-vimeo"></i></a>
-			<a href="" taget="_blank"><i class="icon-twitter"></i></a>
-			<a href="" taget="_blank"><i class="icon-instgram"></i></a>
-			<a href="" taget="_blank"><i class="icon-facebook"></i></a>
-			<a href="" taget="_blank"><i class="icon-linkedin"></i></a>
+			{% if footerContent.vimeoUrl|length %} <a href="{{ footerContent.vimeoUrl }}" taget="_blank"><i class="icon-vimeo"></i></a> {% endif %}
+			{% if footerContent.twitterUrl|length %} <a href="{{ footerContent.twitterUrl }}" taget="_blank"><i class="icon-twitter"></i></a> {% endif %}
+			{% if footerContent.instagramUrl|length %} <a href="{{ footerContent.instagramUrl }}" taget="_blank"><i class="icon-instgram"></i></a> {% endif %}
+			{% if footerContent.facebookUrl|length %} <a href="{{ footerContent.facebookUrl }}" taget="_blank"><i class="icon-facebook"></i></a> {% endif %}
+			{% if footerContent.linkedinUrl|length %} <a href="{{ footerContent.linkedinUrl }}" taget="_blank"><i class="icon-linkedin"></i></a> {% endif %}
 		</div>
 	</div>
 </footer>
