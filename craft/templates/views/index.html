@@ -12,20 +12,12 @@
     </section>
 
 
-    {% if entry.video|length %}
-        {% for video in entry.video %}
-            <div class="featured-video">
-                <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/{{ video.vimeoId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
+    {% include 'partials/featured-video-simple' %}
 
 
     {% if entry.featuredContent|length %}
         {% for content in entry.featuredContent %}
-            {# {% include 'partials/feautred-content-row' with {'content' : content} %} #}
+            {% include 'partials/featured-content-row' with {'content' : content} %}
         {% endfor %}
     {% endif %}
 

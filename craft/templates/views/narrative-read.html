@@ -1,3 +1,142 @@
 {% extends "layouts/_layout" %}
 {% block content %}
+
+	{# Set parameters for prev/next elements list #}
+	{% set params = craft.entries.section('narrativeProject') %}
+
+	{# Get the prev/next elements #}
+	{% set prevEntry = entry.getPrev(params) %}
+	{% set nextEntry = entry.getNext(params) %}
+	{% set lastEntry = craft.entries.section('narrativeProject').last() %}
+	{% set firstEntry = craft.entries.section('narrativeProject').first() %}
+
+	{# loop entries #}
+	{% if prevEntry %}
+		{% set prevEntry = entry.getPrev(params) %}
+	{% else %}
+		{% set prevEntry = lastEntry %}
+	{% endif %}
+
+	{% if nextEntry %}
+		{% set nextEntry = entry.getNext(params) %}
+	{% else %}
+		{% set nextEntry = firstEntry %}
+	{% endif %}
+
+
+
+	<section class="page-header spilt">
+		<div class="page-header__content">
+			<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
+			<p>{% if entry.pageHeaderCopy|length %}{{ entry.pageHeaderCopy }}{% endif %}</p>
+		</div>
+		<div class="page-header__nav">
+			{% if prevEntry %}
+				<a href="{{ prevEntry.url }}" class="page-header__nav-link prev">
+					<span class="pretitle">Previous</span>
+					<span class="title">{{ prevEntry.title }}</span>
+				</a>
+			{% endif %}
+			{% if nextEntry %}
+				<a href="{{ nextEntry.url }}" class="page-header__nav-link next">
+					<span class="pretitle">Next</span>
+					<span class="title">{{ nextEntry.title }}</span>
+				</a>
+			{% endif %}
+		</div>
+	</section>
+
+    {% include 'partials/featured-video-simple' %}
+
+    <section class="narrative__details">
+    	<section class="narrative__intro">
+    		{% if entry.fancyTitle|length %}
+    			{% for row in entry.fancyTitle %}
+		            <span class="narrative__large-title">{{ row.topLine }} <strong>{{ row.bottomLine }}</strong></span>
+		        {% endfor %}
+	        {% endif %}
+            {% if entry.synopsis|length %}
+	            <section class="narrative__synopsis">
+	            	<h2 class="narrative__title"><span>[</span> Synopsis <span>]</span></h2>
+	            	{{ entry.synopsis }}
+	            </section>
+	        {% endif %}
+    	</section>
+
+    	{% if entry.videoPoster|length %}
+	    	<section class="narrative__poster">
+	    		<img src="{{ entry.videoPoster.one().url }}" alt="">
+	    	</section>
+	    {% endif %}
+
+    	{% if entry.awards|length %}
+	    	<section class="narrative__awards">
+	    		<h2 class="narrative__title"><span>[</span> Awards <span>]</span></h2>
+	    		{% for award in entry.awards %}
+		    		<div class="award">
+		    			{% if award.awardUrl|length %}
+		    				<a href="{{ award.awardUrl }}" target="_blank" class="title">{{ award.awardTitle }}</a>
+		    			{% else %}
+			    			<p class="title">{{ award.awardTitle }}</p>
+			    		{% endif %}
+		    			{{ award.categories }}
+		    		</div>
+		    	{% endfor %}
+	    	</section>
+	    {% endif %}
+
+	    {% if entry.festivals|length %}
+	    	<section class="narrative__festivals">
+	    		<h2 class="narrative__title"><span>[</span> Festivals <span>]</span></h2>
+	    		<ul class="festivals">
+	    			{% for festival in entry.festivals %}
+	    				{% if festival.festivalUrl|length %}
+	    					<li><a href="{{ festival.festivalUrl }}" target="_blank">{{ festival.festivalTitle }}</a></li>
+	    				{% else %}
+	    					<li>{{ festival.festivalTitle }}</li>
+	    				{% endif %}
+	    			{% endfor %}
+	    		</ul>
+	    	</section>
+	    {% endif %}
+
+	    {% if entry.press|length %}
+	    	<section class="narrative__press">
+	    		<h2 class="narrative__title"><span>[</span> Press <span>]</span></h2>
+	    		<ul class="press">
+	    			{% for press in entry.press %}
+	    				{% if press.pressUrl|length %}
+	    					<li><a href="{{ press.pressUrl }}" target="_blank">{{ press.pressTitle }}</a></li>
+	    				{% else %}
+	    					<li>{{ press.pressTitle }}</li>
+	    				{% endif %}
+		    		{% endfor %}
+	    		</ul>
+	    	</section>
+	    {% endif %}
+
+	    {% if entry.additionalInformation|length %}
+	    	<section class="narrative__additional-info">
+	    		{% for block in entry.additionalInformation %}
+		    		<div class="narrative__block">
+			    		{% if block.blockTitle|length %}
+				    		<h2 class="narrative__title"><span>[</span> {{ block.blockTitle}} <span>]</span></h2>
+				    	{% endif %}
+				    	{% if block.blockList|length %}
+				    		<ul>
+				    			{% for point in block.blockList %}
+				    				{% if point.contentUrl|length %}
+				    					<li><a href="{{ point.contentUrl }}" target="_blank">{{ point.contentTitle }}</a></li>
+				    				{% else %}
+				    					<li>{{ point.contentTitle }}</li>
+				    				{% endif %}
+				    			{% endfor %}
+				    		</ul>
+				    	{% endif %}
+			    	</div>
+			    {% endfor %}
+	    	</section>
+	    {% endif %}
+    </section>
+
 {% endblock %}

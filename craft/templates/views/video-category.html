@@ -1,0 +1,13 @@
+{% extends "layouts/_layout" %}
+{% block content %}
+	
+	<section class="page-header">
+		<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
+		<p>{% if entry.pageHeaderCopy|length %}{{ entry.pageHeaderCopy }}{% endif %}</p>
+	</section>
+
+    {% include 'partials/featured-video' %}
+    
+    {% include 'partials/video-feed' %}
+
+{% endblock %}

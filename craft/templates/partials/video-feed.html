@@ -1,0 +1,14 @@
+{% if entry.videos|length %}
+    <section class="video-feed">
+    	{% for video in entry.videos %}
+    	<div class="video-feed__item">
+    		<div class="video-container">
+	            <iframe src="https://player.vimeo.com/video/{{ video.vimeoId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+	        </div>
+	        <h2 class="video-title">{{ video.title }}</h2>
+        	{% if video.client|length %}<h3 class="video-client">{{ video.client }}</h3>{% endif %}
+        	{% if video.summary|length %}<p class="video-summary">{{ video.summary }}</p>{% endif %}
+    	</div>
+    	{% endfor %}
+    </section>
+{% endif %}

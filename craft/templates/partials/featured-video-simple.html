@@ -1,0 +1,9 @@
+{% if entry.video|length %}
+    {% for video in entry.video %}
+        <div class="featured-video simple">
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/{{ video.vimeoId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

@@ -11,11 +11,11 @@ import {output as pagespeed} from 'psi';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-//const SRC_IMAGES = "craft3/web/src/images/**/*";
+//const SRC_IMAGES = "craft/web/src/images/**/*";
 
-const DIST_SCRIPTS = "craft3/web/dist/scripts";
-const DIST_STYLES = "craft3/web/dist/styles";
-//const DIST_IMAGES = "craft3/web/dist/images";
+const DIST_SCRIPTS = "craft/web/dist/scripts";
+const DIST_STYLES = "craft/web/dist/styles";
+//const DIST_IMAGES = "craft/web/dist/images";
 
 const LOCALSERVER = "local.zack-bernbaum";
 
@@ -31,10 +31,10 @@ const AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
-const SRC_STYLES = "craft3/web/src/styles/main.scss";
+const SRC_STYLES = "craft/web/src/styles/main.scss";
 
 const SRC_SCRIPTS = [
-    // 'craft3/web/src/scripts/site_scripts.js'
+    // 'craft/web/src/scripts/site_scripts.js'
 ];
 
 
@@ -118,6 +118,6 @@ gulp.task('watch', function() {
     gulp.watch(SRC_SCRIPTS_ES6, ['es6scripts']);
 
    // gulp.watch(SRC_STYLES, ['styles']);
-    gulp.watch("craft3/web/src/styles/**/*", ['styles']);
+    gulp.watch("craft/web/src/styles/**/*", ['styles']);
 });
 
