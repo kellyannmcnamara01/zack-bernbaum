@@ -1,0 +1,24 @@
+.page-header {
+	background: $red;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 0 6rem 20rem;
+	margin-bottom: -15rem;
+
+	h1 {
+		width: 100%;
+		@extend .title-xlarge;
+	}
+	h2 {
+		width: 100%;
+		@extend .title-small;
+		font-family: $body-font;
+		font-weight: 300;
+	}
+
+	p {
+		max-width: 75%;
+	}
+}

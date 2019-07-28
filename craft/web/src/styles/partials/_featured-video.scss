@@ -1,0 +1,22 @@
+.featured-video {
+	@include column(10);
+	margin: 0 auto;
+	display: flex;
+	align-content: center;
+	// flex-wrap: wrap;
+}
+
+.featured-video__video {
+	@include column(7.5);
+}
+
+.featured-video__content {
+	@include column(4.5);
+	background: $blue;
+	padding: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	margin: 5rem 0;
+	box-shadow: 10px 10px 30px rgba($darkblue, 0.25);
+}
