@@ -51,7 +51,7 @@
 			margin-right: 0;
 		}
 
-		&::before {
+		&::before, &::after {
 			display: none;
 		}
 	}

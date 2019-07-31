@@ -1,0 +1,56 @@
+.fancybox-bg {
+	background: #fff;
+
+	.fancybox-is-open & {
+		opacity: 0.95;
+	}
+}
+
+.fancybox-toolbar {
+	margin: 1rem 1rem 0 0;
+}
+
+.fancybox-button {
+	margin-left: 1rem;
+	background: $motum-blue;
+	color: $motum-darkgrey;
+	position: relative;
+	transition: 0.35s ease all;
+
+	svg {
+		z-index: 1;
+	}
+
+	&:hover, &:focus {
+		background: $motum-darkgrey;
+		color: #fff;
+		&::before, &::after {
+			width: 100%;
+		}
+	}
+	// transition-delay: 0.35s;
+
+	&::before, &::after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: 0.35s ease all;
+	}
+
+	&::before {
+		background: $motum-yellow;
+	}
+
+	&::after {
+		background: $motum-darkgrey;
+		transition-delay: 0.1s;
+	}
+
+	&.fancybox-button--close {
+		background: $motum-red;
+	}
+}
