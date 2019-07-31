@@ -1,0 +1,19 @@
+.video-feed {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+	padding: 0 6rem;
+
+	.video-title, .video-client, .video-summary {
+		width: 80%;
+	}
+
+	.video-title {
+		padding-top: 3rem;
+	}
+}
+
+.video-feed__item {
+	width: calc(33.333% - 3rem);
+}

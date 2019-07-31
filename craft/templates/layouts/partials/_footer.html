@@ -9,7 +9,7 @@
 		{% if footerContent.contactLinks|length %}
 			<div class="footer__links-contact">
 				{% for link in footerContent.contactLinks %}
-					<a href="{{ link.linkUrl.getUrl() }}">{{ link.linkTitle }}</a>
+					<div><a href="{{ link.linkUrl.getUrl() }}">{{ link.linkTitle }}</a></div>
 				{% endfor %}
 			</div>
 		{% endif %}
@@ -18,7 +18,7 @@
 		<div class="footer__links-social">
 			{% if footerContent.vimeoUrl|length %} <a href="{{ footerContent.vimeoUrl }}" taget="_blank"><i class="icon-vimeo"></i></a> {% endif %}
 			{% if footerContent.twitterUrl|length %} <a href="{{ footerContent.twitterUrl }}" taget="_blank"><i class="icon-twitter"></i></a> {% endif %}
-			{% if footerContent.instagramUrl|length %} <a href="{{ footerContent.instagramUrl }}" taget="_blank"><i class="icon-instgram"></i></a> {% endif %}
+			{% if footerContent.instagramUrl|length %} <a href="{{ footerContent.instagramUrl }}" taget="_blank"><i class="icon-instagram"></i></a> {% endif %}
 			{% if footerContent.facebookUrl|length %} <a href="{{ footerContent.facebookUrl }}" taget="_blank"><i class="icon-facebook"></i></a> {% endif %}
 			{% if footerContent.linkedinUrl|length %} <a href="{{ footerContent.linkedinUrl }}" taget="_blank"><i class="icon-linkedin"></i></a> {% endif %}
 		</div>

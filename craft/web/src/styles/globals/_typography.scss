@@ -1,32 +1,34 @@
 .title-element {
 	font-family: $title-font;
-	line-height: 1.3;
-	font-weight: 700;
+	// line-height: 1.1;
 	color: #fff;
 }
 
 .title-xlarge {
 	font-size: 9rem;
+	font-weight: 700;
 	@extend .title-element;
 }
 
 .title-large {
-	font-size: 7rem;
+	font-size: 6.5rem;
+	font-weight: 700;
 	@extend .title-element;
 }
 
 .title-medium {
-	font-size: 5rem;
+	font-size: 5.5rem;
+	font-weight: 300;
 	@extend .title-element;
 }
 
 .title-small {
-	font-size: 3.5rem;
+	font-size: 3rem;
 	@extend .title-element;
 }
 
 p {
-	font-size: 1.8rem;
+	font-size: 2rem;
 	line-height: 1.3;
 	font-weight: 300;
 	color: #fff;
