@@ -1,7 +1,7 @@
 {% if entry.videos|length %}
     <section class="video-feed">
     	{% for video in entry.videos.all() %}
-        	<a data-fancybox data-src="#video-{{ video.id }}" class="video-feed__item" href="javascript:;">
+        	<a data-fancybox="gallery" data-src="#video-{{ video.id }}" href="javascript:;" class="video-feed__item">
                 {% if video.videoThumb|length %}
                     {% for img in video.videoThumb.all() %}
                         {% set imgSrc = img.url('videoThumb') %}
@@ -14,10 +14,12 @@
             	{% if video.client|length %}<h3 class="video-client">{{ video.client }}</h3>{% endif %}
             	{% if video.summary|length %}<p class="video-summary">{{ video.summary }}</p>{% endif %}
         	</a>
-
-            <div style="display: none;" id="video-{{ video.id }}">
-                <h1>{{ video.title }} testing 1 2 3</h1>
-            </div>
     	{% endfor %}
     </section>
+
+    {% for video in entry.videos.all() %}
+    <div style="fancybox-popover video-feed__popover" style="background: yellow;" id="video-{{ video.id }}">
+            <h1>{{ video.title }} testing 1 2 3</h1>
+        </div>
+    {% endfor %}
 {% endif %}
