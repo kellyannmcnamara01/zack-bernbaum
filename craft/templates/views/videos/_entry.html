@@ -1,0 +1,6 @@
+{% extends "layouts/_layout" %}
+{% block content %}
+
+{% include "views/videos/types/" ~ entry.type.handle|kebab %}
+
+{% endblock %}

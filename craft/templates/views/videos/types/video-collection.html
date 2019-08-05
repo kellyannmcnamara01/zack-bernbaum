@@ -1,4 +1,3 @@
-{% extends "layouts/_layout" %}
 {% block content %}
 	
 	<section class="page-header">
@@ -8,6 +7,10 @@
 
     {% include 'partials/featured-video' %}
     
-    {% include 'partials/video-feed' %}
+
+    {% if entry.hasDescendants() %}
+    	{% set videos = craft.entries().descendantOf(entry.id).all() %}
+    	{% include 'partials/video-feed' with { 'videos' : videos } %}
+    {% endif %}
 
 {% endblock %}

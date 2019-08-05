@@ -1,4 +1,3 @@
-{% extends "layouts/_layout" %}
 {% block content %}
 
 	{# Set parameters for prev/next elements list #}
@@ -25,7 +24,7 @@
 
 
 
-	<section class="page-header spilt">
+	<section class="page-header spilt align-bottom">
 		<div class="page-header__content">
 			<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
 			<p>{% if entry.pageHeaderCopy|length %}{{ entry.pageHeaderCopy }}{% endif %}</p>

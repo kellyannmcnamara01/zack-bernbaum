@@ -1,25 +1,29 @@
-{% if entry.videos|length %}
-    <section class="video-feed">
-    	{% for video in entry.videos.all() %}
-        	<a data-fancybox="gallery" data-src="#video-{{ video.id }}" href="javascript:;" class="video-feed__item">
-                {% if video.videoThumb|length %}
-                    {% for img in video.videoThumb.all() %}
-                        {% set imgSrc = img.url('videoThumb') %}
-                            <div class="video-thumb">
-                                <img src="{{ imgSrc }}">
-                            </div>
-                    {% endfor %}
-                {% endif %}
-    	        <h2 class="video-title">{{ video.title }}</h2>
-            	{% if video.client|length %}<h3 class="video-client">{{ video.client }}</h3>{% endif %}
-            	{% if video.summary|length %}<p class="video-summary">{{ video.summary }}</p>{% endif %}
-        	</a>
-    	{% endfor %}
-    </section>
+<section class="video-feed">
+	{% for video in videos %}
+        {% if video.type == 'simpleVideo' %}
+    	   <a data-fancybox="gallery" data-src="#video-{{ video.id }}" href="javascript:;" class="video-feed__item">
+        {% elseif video.type == 'video' %}
+            <a href="{{ video.url }}" class="video-feed__item">
+        {% endif %}
+            {% if video.videoThumb|length %}
+                {% for img in video.videoThumb.all() %}
+                    {% set imgSrc = img.url('videoThumb') %}
+                        <div class="video-thumb">
+                            <img src="{{ imgSrc }}">
+                        </div>
+                {% endfor %}
+            {% endif %}
+	        <h2 class="video-title">{{ video.title }}</h2>
+        	{% if video.client|length %}<h3 class="video-client">{{ video.client }}</h3>{% endif %}
+        	{% if video.summary|length %}<p class="video-summary">{{ video.summary }}</p>{% endif %}
+    	</a>
+	{% endfor %}
+    <div class="video-feed__item empty"></div>
+    <div class="video-feed__item empty"></div>
+</section>
 
-    {% for video in entry.videos.all() %}
-    <div style="fancybox-popover video-feed__popover" style="background: yellow;" id="video-{{ video.id }}">
-            <h1>{{ video.title }} testing 1 2 3</h1>
-        </div>
-    {% endfor %}
-{% endif %}
+{% for video in videos %}
+<div style="fancybox-popover video-feed__popover" style="background: yellow;" id="video-{{ video.id }}">
+        <h1>{{ video.title }} testing 1 2 3</h1>
+    </div>
+{% endfor %}
