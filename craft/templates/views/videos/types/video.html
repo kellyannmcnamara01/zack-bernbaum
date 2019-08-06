@@ -84,7 +84,7 @@
 		    			{% else %}
 			    			<p class="title">{{ award.awardTitle }}</p>
 			    		{% endif %}
-		    			{{ award.categories }}
+		    			<p class="detail">{{ award.categories }}</p>
 		    		</div>
 		    	{% endfor %}
 	    	</section>
@@ -96,9 +96,9 @@
 	    		<ul class="festivals">
 	    			{% for festival in entry.festivals %}
 	    				{% if festival.festivalUrl|length %}
-	    					<li><a href="{{ festival.festivalUrl }}" target="_blank">{{ festival.festivalTitle }}</a></li>
+	    					<li class="festival"><a href="{{ festival.festivalUrl }}" target="_blank">{{ festival.festivalTitle }}</a></li>
 	    				{% else %}
-	    					<li>{{ festival.festivalTitle }}</li>
+	    					<li class="festival">{{ festival.festivalTitle }}</li>
 	    				{% endif %}
 	    			{% endfor %}
 	    		</ul>

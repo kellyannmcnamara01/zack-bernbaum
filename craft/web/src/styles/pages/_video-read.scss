@@ -6,6 +6,49 @@
 
 	p {
 		line-height: 1.5;
+		font-weight: 300;
+	}
+
+	.award {
+		margin-bottom: 2.5rem;
+		padding-right: 3rem;
+		@include column(4);
+
+		a {
+			white-space: inherit; 
+			color: #fff;
+
+			&::before, &::after {
+				display: none;
+			}
+
+			&:hover, &:focus {
+				color: $yellow;
+			}
+		}
+	}
+
+	.title {
+		font-size: 1.7rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 5px;
+	}
+
+	.detail {
+		font-size: 1.7rem;
+		line-height: 1.2;
+		font-weight: 300;
+		color: #fff;
+	}
+
+	li {
+		font-size: 1.7rem;
+		line-height: 1.2;
+		color: #fff;
+		padding-bottom: 2rem;
+		padding-right: 3rem;
+		font-weight: 300;
 	}
 }
 
@@ -38,6 +81,7 @@
 	text-transform: uppercase;
 	padding-bottom: 2rem;
 	font-weight: 700;
+	width: 100%;
 
 	span {
 		color: $red;
@@ -56,6 +100,9 @@
 	@include column(12);
 	padding-right: 25%;
 	padding-bottom: 6rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 .video-read__festivals {
@@ -63,6 +110,19 @@
 	padding-left: 25%;
 	padding-bottom: 6rem;
 }
+
+.festivals {
+	column-count: 3;
+}
+
+// .festival {
+// 	font-size: 1.7rem;
+// 	line-height: 1.2;
+// 	color: #fff;
+// 	padding-bottom: 2rem;
+// 	padding-right: 3rem;
+// 	font-weight: 300;
+// }
 
 .video-read__additional-info {
 	@include column(12);
@@ -75,6 +135,19 @@
 	@include column(4);
 	padding-right: 3rem;
 	padding-bottom: 6rem;
+
+	a {
+		white-space: inherit; 
+		color: #fff;
+
+		&::before, &::after {
+			display: none;
+		}
+
+		&:hover, &:focus {
+			color: $yellow;
+		}
+	}
 }
 
 
