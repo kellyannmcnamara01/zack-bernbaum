@@ -1,13 +1,26 @@
 .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding: 2rem 0;
+	padding: 2rem 6rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	transition: 0.35s ease all;
+
+	&.scrolled {
+		background: rgba($blue, 0.85);
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 }
 
 .site-links {
 	a {
-		margin-left: 6rem;
+		margin-left: 9rem;
 		color: #fff;
 		font-family: $title-font;
 		text-transform: uppercase;

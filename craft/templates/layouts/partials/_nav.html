@@ -7,20 +7,22 @@
 {% set addActiveClass = '' %}
 
 <nav class="nav">
-	<div class="site-branding">
-	</div>
-	{% if navigation.navigationLinks|length %}
-		<div class="site-links">
-			{% for link in navigation.navigationLinks %}
-				{% set selectedEntry = link.linkEntry.one() %}
-				{% if activePage == selectedEntry.slug %}
-					{% set addActiveClass = 'active' %}
-					<a class="{{ addActiveClass }}" href="{{ selectedEntry.url }}" active-page="{{ selectedEntry.slug }}">{{ link.linkTitle }}</a>
-				{% else %}
-					<a href="{{ selectedEntry.url }}" active-page="{{ selectedEntry.slug }}">{{ link.linkTitle }}</a>
-				{% endif %}
-			{% endfor %}
-			<a href="#contact" class="js-smooth-scroll">Contact</a>
+	<div class="wrapper">
+		<div class="site-branding">
 		</div>
-	{% endif %}
+		{% if navigation.navigationLinks|length %}
+			<div class="site-links">
+				{% for link in navigation.navigationLinks %}
+					{% set selectedEntry = link.linkEntry.one() %}
+					{% if activePage == selectedEntry.slug %}
+						{% set addActiveClass = 'active' %}
+						<a class="{{ addActiveClass }}" href="{{ selectedEntry.url }}" active-page="{{ selectedEntry.slug }}">{{ link.linkTitle }}</a>
+					{% else %}
+						<a href="{{ selectedEntry.url }}" active-page="{{ selectedEntry.slug }}">{{ link.linkTitle }}</a>
+					{% endif %}
+				{% endfor %}
+				<a href="#contact" class="js-smooth-scroll">Contact</a>
+			</div>
+		{% endif %}
+	</div>
 </nav>
