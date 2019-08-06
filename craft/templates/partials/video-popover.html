@@ -21,8 +21,8 @@
     <div class="popover__container">
         <div class="popover__nav">
             <div>
-                <a class="popover__nav-btn prev" href="{{ prevVideo.url }}"><span>Previous</span>{{ prevVideo.title }}</a>
-                <a class="popover__nav-btn next" href="{{ nextVideo.url }}"><span>Next</span>{{ nextVideo.title }}</a>
+                <button data-fancybox-prev class="popover__nav-btn prev" href="{{ prevVideo.url }}"><span>Previous</span>{{ prevVideo.title }}</button>
+                <button data-fancybox-next class="popover__nav-btn next" href="{{ nextVideo.url }}"><span>Next</span>{{ nextVideo.title }}</button>
             </div>
             <div>
                 <button type="button" data-fancybox-close class="popover__close" title="close">
