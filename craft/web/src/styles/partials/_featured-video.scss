@@ -33,6 +33,14 @@
 	color: $yellow;
 	width: 100%;
 	text-transform: uppercase;
+
+	a {
+		white-space: inherit;
+
+		&::before, &::after {
+			display: none;
+		}
+	}
 }
 
 .video-client {

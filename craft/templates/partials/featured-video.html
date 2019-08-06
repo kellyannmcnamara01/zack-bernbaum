@@ -7,7 +7,11 @@
 	        </div>
         </div>
         <div class="featured-video__content">
-        	<h2 class="video-title">{{ video.title }}</h2>
+            {% if video.type == 'video' %}
+                <h2 class="video-title"><a href="{{ video.url }}">{{ video.title }}</a></h2>
+            {% elseif video.type == 'simpleVideo' %}
+                <h2 class="video-title">{{ video.title }}</h2>
+            {% endif %}
         	{% if video.client|length %}<h3 class="video-client">{{ video.client }}</h3>{% endif %}
         	{% if video.summary|length %}<p class="video-summary">{{ video.summary }}</p>{% endif %}
         </div>
