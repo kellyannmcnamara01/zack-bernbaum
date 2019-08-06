@@ -15,6 +15,11 @@
 		box-shadow: 10px 10px 30px rgba($darkblue, 0.33);
 		margin: 0;
 	}
+
+	.simple & {
+		@include column(10);
+		margin: 0 auto;
+	}
 }
 
 .featured-video__content {

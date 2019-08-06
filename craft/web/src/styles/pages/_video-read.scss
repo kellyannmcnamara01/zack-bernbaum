@@ -1,0 +1,88 @@
+.video-read__details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 6rem;
+
+	p {
+		line-height: 1.5;
+	}
+}
+
+.video-read__intro {
+	@include column(6);
+	align-self: center;
+}
+
+.video-read__large-title {
+	@extend .title-large;
+	font-weight: 300;
+	@include column(6);
+	display: block;
+	text-transform: uppercase;
+
+	strong {
+		font-weight: 700;
+		display: block;
+	}
+}
+
+.video-read__synopsis {
+	padding-left: 8.333%;
+	width: calc(100% - 8.333%);
+	margin-top: 5rem;
+}
+
+.video-read__title {
+	@extend .title-small;
+	text-transform: uppercase;
+	padding-bottom: 2rem;
+	font-weight: 700;
+
+	span {
+		color: $red;
+		font-weight: 300;
+	}
+}
+
+.video-read__poster {
+	@include column(5);
+	img {
+		width: 100%;
+	}
+}
+
+.video-read__awards, .video-read__press {
+	@include column(12);
+	padding-right: 25%;
+	padding-bottom: 6rem;
+}
+
+.video-read__festivals {
+	@include column(12);
+	padding-left: 25%;
+	padding-bottom: 6rem;
+}
+
+.video-read__additional-info {
+	@include column(12);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.video-read__block {
+	@include column(4);
+	padding-right: 3rem;
+	padding-bottom: 6rem;
+}
+
+
+
+
+
+
+
+
+
+
