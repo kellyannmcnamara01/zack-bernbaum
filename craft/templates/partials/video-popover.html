@@ -1,0 +1,66 @@
+{# Get the prev/next elements #}
+    {% set prevVideo = video.getPrev(videoList) %}
+    {% set nextVideo = video.getNext(videoList) %}
+    {% set lastVideo = videoList.last() %}
+    {% set firstVideo = videoList.first() %}
+
+    {# loop entries #}
+    {% if prevVideo %}
+        {% set prevVideo = video.getPrev(videoList) %}
+    {% else %}
+        {% set prevVideo = lastVideo %}
+    {% endif %}
+
+    {% if nextVideo %}
+        {% set nextVideo = video.getNext(videoList) %}
+    {% else %}
+        {% set nextVideo = firstVideo %}
+    {% endif %}
+
+<div class="video-feed__popover" id="video-{{ video.id }}">
+    <div class="popover__container">
+        <div class="popover__nav">
+            <div>
+                <a class="popover__nav-btn prev" href="{{ prevVideo.url }}"><span>Previous</span>{{ prevVideo.title }}</a>
+                <a class="popover__nav-btn next" href="{{ nextVideo.url }}"><span>Next</span>{{ nextVideo.title }}</a>
+            </div>
+            <div>
+                <button type="button" data-fancybox-close class="popover__close" title="close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Close
+                </button>
+            </div>
+        </div>
+        <div class="popover__video">
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/{{ video.vimeoId }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+            </div>
+        </div>
+        <div class="popover__content">
+            <span class="popover__title">{{ video.title }}</span>
+            {% if video.client|length %}<span class="popover__client">{{ video.client }}</span>{% endif %}
+            <span class="popover__desc">{{ video.summary }}</span>
+            {% if video.additionalInformation|length %}
+                <div class="popover__extra-info">
+                    {% for block in video.additionalInformation %}
+                            <span class="extra-info__title">
+                                {% if block.blockTitle|length %}
+                                    {{ block.blockTitle}}:
+                                {% endif %}
+                                {% for point in block.blockList %}
+                                    {% if point.contentUrl|length %}
+                                        <a href="{{ point.contentUrl }}" target="_blank"><span>{{ point.contentTitle }}</span></a>
+                      ``              {% else %}
+                                        <span>{{ point.contentTitle }}</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

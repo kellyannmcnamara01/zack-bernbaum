@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-	//inti fancybox 
-	// fancybox settings 
+    // fancybox settings 
     $('[data-fancybox="gallery"]').fancybox({
         keyboard: true,
         preventCaptionOverlap: false, 
@@ -13,5 +12,6 @@ $(document).ready(function(){
         ],
         idleTime: 300,
     });
-	
+
+    
 });

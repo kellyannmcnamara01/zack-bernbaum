@@ -27,7 +27,7 @@
 .video-feed__item {
 	width: calc(33.333% - 3rem);
 	white-space: inherit;
-	
+	margin-bottom: 4rem;
 
 	&::before, &::after {
 		display: none;

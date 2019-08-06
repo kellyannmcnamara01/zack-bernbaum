@@ -1,0 +1,175 @@
+.video-feed__popover {
+	display: none;
+	width: 100%;
+	max-width: 800px;
+	padding: 0;
+	margin: 3rem;
+	background: none;
+}
+
+.popover__nav {
+	padding-bottom: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.popover__nav-btn {
+	color: #fff;
+	font-weight: 300;
+	font-size: 1.7rem;
+	display: inline-block;
+
+	span {
+		color: $yellow;
+		font-size: 1.5rem;
+		display: block;
+	}
+
+	&::before, &::after {
+		display: none;
+	}
+
+	&.prev {
+		text-align: right;
+		padding-right: 2rem;
+		margin-right: 1.5rem;
+		border-right: solid 1px $red;
+	}
+}
+
+.popover__close {
+	background: rgba($red, 0.4);
+	position: relative;
+	border: none;
+	padding: 1rem 1.75rem;
+	color: #fff;
+	font-family: $title-font;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.8rem;
+	// line-height: 0;
+
+	>span {
+		width: 7px;
+		height: 7px;
+		display: block;
+		position: absolute;
+
+		&:first-child {
+			top: 0;
+			left: 0;
+			border-top: solid 2px $red;
+			border-left: solid 2px $red;
+		}
+		&:nth-child(2) {
+			top: 0;
+			right: 0;
+			border-top: solid 2px $red;
+			border-right: solid 2px $red;
+		}
+		&:nth-child(3) {
+			bottom: 0;
+			right: 0;
+			border-bottom: solid 2px $red;
+			border-right: solid 2px $red;
+		}
+		&:last-child {
+			bottom: 0;
+			left: 0;
+			border-bottom: solid 2px $red;
+			border-left: solid 2px $red;
+		}
+	}
+}
+
+.popover__content {
+	padding: 2rem;
+	background: #142346;
+	color: #fff;
+}
+
+.popover__title {
+	@extend .title-medium;
+	display: block;
+	color: $yellow;
+}
+
+.popover__client {
+	@extend .title-small;
+	display: block;
+	color: $yellow;
+}
+
+.popover__desc, .popover__extra-info {
+	padding-top: 2rem;
+	display: block;
+}
+
+.extra-info__title {
+	font-weight: 700;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	// flex-wrap: wrap;
+
+	>span {
+		padding-left: 1rem;
+		margin-left: 1rem;
+		position: relative;
+		font-weight: 300;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 100%;
+			width: 1px;
+			background: rgba(#fff, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&:first-child {
+			padding-left: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+.fancybox-bg {
+	background: rgba(#05091b, 0.95);
+}
+
+.fancybox-slide--html .fancybox-close-small {
+	background: yellow;
+}
+
+.fancybox-navigation .fancybox-button {
+	>div {
+		background: #05091b;
+		transition: 0.35s ease all;
+
+		&:hover, &:focus {
+			background: darken($blue, 33%);
+		}
+	}
+}
+
+.fancybox-button svg path {
+	fill: $yellow;
+}
+
+.fancybox-close-small {
+	display: none;
+}
