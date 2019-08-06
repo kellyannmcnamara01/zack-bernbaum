@@ -3,11 +3,17 @@
 
 
     <section class="page-header">
-        <h1 class="site-title">Zack <strong>Bernbaum</strong></h1>
-        <h2 class="site-subtitle">Storyteller. Director.</h2>
+        <div>
+            <h1 class="site-title">Zack <strong>Bernbaum</strong></h1>
+            <h2 class="site-subtitle">Storyteller. Director.</h2>
+        </div>
 
         {% if entry.pageHeaderCopy|length %}
-            <div class="page-header-copy">{{ entry.pageHeaderCopy }}</div>
+            <div class="page-header-copy">
+                <div>
+                    {{ entry.pageHeaderCopy }}
+                </div>
+            </div>
         {% endif %}
     </section>
 

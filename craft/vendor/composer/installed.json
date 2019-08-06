@@ -869,6 +869,60 @@
         ]
     },
     {
+        "name": "fatfish/navigation",
+        "version": "1.0.7",
+        "version_normalized": "1.0.7.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fatfishdigital/Navigation/zipball/3872276775ac6e50c28a35a5e0591fb48c495219",
+            "reference": "3872276775ac6e50c28a35a5e0591fb48c495219",
+            "shasum": ""
+        },
+        "require": {
+            "craftcms/cms": "^3.0.0-RC1"
+        },
+        "time": "2018-08-31T02:50:34+00:00",
+        "type": "craft-plugin",
+        "extra": {
+            "name": "CraftNavigation",
+            "handle": "craftnavigation",
+            "hasCpSettings": true,
+            "hasCpSection": true,
+            "changelogUrl": "https://raw.githubusercontent.com/https://github.com/fatfishdigital/navigation/master/CHANGELOG.md",
+            "components": {
+                "navigationService": "fatfish\\navigation\\services\\NavigationService"
+            },
+            "class": "fatfish\\navigation\\Navigation"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "fatfish\\navigation\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fatfish",
+                "homepage": "https://fatfish.com.au"
+            }
+        ],
+        "description": "Craft navigation for the website.",
+        "keywords": [
+            "cms",
+            "craft",
+            "craft-plugin",
+            "craftcms",
+            "navigation"
+        ],
+        "support": {
+            "docs": "https://github.com/https://github.com/fatfishdigital/navigation/blob/master/README.md",
+            "issues": "https://github.com/https://github.com/fatfishdigital/navigation/issues"
+        }
+    },
+    {
         "name": "guzzlehttp/guzzle",
         "version": "6.3.3",
         "version_normalized": "6.3.3.0",

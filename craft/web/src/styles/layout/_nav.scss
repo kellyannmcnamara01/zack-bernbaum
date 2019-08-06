@@ -1,0 +1,32 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 2rem 0;
+}
+
+.site-links {
+	a {
+		margin-left: 6rem;
+		color: #fff;
+		font-family: $title-font;
+		text-transform: uppercase;
+		font-size: 2rem;
+
+		&::before, &::after {
+			height: 3px;
+		}
+
+		&::before {
+			width: 0;
+		}
+
+		&.active::before {
+			width: 100%;
+		}
+
+		&:hover, &:focus {
+			color: $yellow;
+		}
+	}
+}

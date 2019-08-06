@@ -1,6 +1,8 @@
 {% include "layouts/partials/_head" %}
 	
 	<div class="wrapper {{ entry.type|kebab }}">
+		{% include "layouts/partials/_nav" %}
+
 		{% block content %}
 	    {% endblock %}
 

@@ -49,6 +49,10 @@ class ComposerStaticInit1181db625221c77862e60299c7c19dce
             'modules\\' => 8,
             'mikehaertl\\shellcommand\\' => 24,
         ),
+        'f' => 
+        array (
+            'fatfish\\navigation\\' => 19,
+        ),
         'e' => 
         array (
             'enshrined\\svgSanitize\\' => 22,
@@ -206,6 +210,10 @@ class ComposerStaticInit1181db625221c77862e60299c7c19dce
         'mikehaertl\\shellcommand\\' => 
         array (
             0 => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src',
+        ),
+        'fatfish\\navigation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fatfish/navigation/src',
         ),
         'enshrined\\svgSanitize\\' => 
         array (
@@ -2863,6 +2871,18 @@ class ComposerStaticInit1181db625221c77862e60299c7c19dce
         'enshrined\\svgSanitize\\data\\AllowedTags' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AllowedTags.php',
         'enshrined\\svgSanitize\\data\\AttributeInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AttributeInterface.php',
         'enshrined\\svgSanitize\\data\\TagInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/TagInterface.php',
+        'fatfish\\navigation\\Navigation' => __DIR__ . '/..' . '/fatfish/navigation/src/Navigation.php',
+        'fatfish\\navigation\\assetbundles\\Navigation\\NavigationAsset' => __DIR__ . '/..' . '/fatfish/navigation/src/assetbundles/navigation/NavigationAsset.php',
+        'fatfish\\navigation\\assetbundles\\indexcpsection\\IndexCPSectionAsset' => __DIR__ . '/..' . '/fatfish/navigation/src/assetbundles/indexcpsection/IndexCPSectionAsset.php',
+        'fatfish\\navigation\\controllers\\NavigationController' => __DIR__ . '/..' . '/fatfish/navigation/src/controllers/NavigationController.php',
+        'fatfish\\navigation\\migrations\\Install' => __DIR__ . '/..' . '/fatfish/navigation/src/migrations/Install.php',
+        'fatfish\\navigation\\models\\NavigationModel' => __DIR__ . '/..' . '/fatfish/navigation/src/models/NavigationModel.php',
+        'fatfish\\navigation\\models\\NavigationNodeModel' => __DIR__ . '/..' . '/fatfish/navigation/src/models/NavigationNodeModel.php',
+        'fatfish\\navigation\\models\\Settings' => __DIR__ . '/..' . '/fatfish/navigation/src/models/Settings.php',
+        'fatfish\\navigation\\records\\NavigationNodeElemenetRecord' => __DIR__ . '/..' . '/fatfish/navigation/src/records/NavigationNodeElemenetRecord.php',
+        'fatfish\\navigation\\records\\NavigationRecord' => __DIR__ . '/..' . '/fatfish/navigation/src/records/NavigationRecord.php',
+        'fatfish\\navigation\\services\\NavigationService' => __DIR__ . '/..' . '/fatfish/navigation/src/services/NavigationService.php',
+        'fatfish\\navigation\\variables\\NavigationVariable' => __DIR__ . '/..' . '/fatfish/navigation/src/variables/NavigationVariable.php',
         'mikehaertl\\shellcommand\\Command' => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src/Command.php',
         'modules\\Module' => __DIR__ . '/../..' . '/modules/Module.php',
         'typedlinkfield\\Plugin' => __DIR__ . '/..' . '/sebastianlenz/linkfield/src/Plugin.php',

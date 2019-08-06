@@ -36,4 +36,27 @@ return array (
     'developerEmail' => 'support@craftcms.com',
     'documentationUrl' => 'https://github.com/craftcms/redactor/blob/v2/README.md',
   ),
+  'fatfish/navigation' => 
+  array (
+    'class' => 'fatfish\\navigation\\Navigation',
+    'basePath' => $vendorDir . '/fatfish/navigation/src',
+    'handle' => 'craftnavigation',
+    'aliases' => 
+    array (
+      '@fatfish/navigation' => $vendorDir . '/fatfish/navigation/src',
+    ),
+    'name' => 'CraftNavigation',
+    'version' => '1.0.7',
+    'description' => 'Craft navigation for the website.',
+    'developer' => 'Fatfish',
+    'developerUrl' => 'https://fatfish.com.au',
+    'documentationUrl' => 'https://github.com/https://github.com/fatfishdigital/navigation/blob/master/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/https://github.com/fatfishdigital/navigation/master/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'navigationService' => 'fatfish\\navigation\\services\\NavigationService',
+    ),
+  ),
 );

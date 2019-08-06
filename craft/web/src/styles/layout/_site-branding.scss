@@ -1,0 +1,17 @@
+.site-title, .page-header h1.site-title {
+	font-weight: 200;
+	text-transform: uppercase;
+
+	strong {
+		font-weight: 700;
+		display: block;
+	}
+}
+
+.site-subtitle, .page-header h2.site-subtitle {
+	font-weight: 200;
+	text-transform: uppercase;
+	color: $yellow;
+	font-family: $title-font;
+	font-size: 8rem;
+}

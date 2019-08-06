@@ -17,7 +17,7 @@
     {% if content.featuredVisuals|length %}
         <div class="featured-content__imgs">
             {% for img in content.featuredVisuals %}
-                {% set imgSrc = img.url %}
+                {% set imgSrc = img.url('featuredVisual') %}
                 <div class="featured-content__img"><img src="{{ imgSrc }}"></div>
             {% endfor %}
         </div>
