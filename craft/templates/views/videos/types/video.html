@@ -1,23 +1,23 @@
 {% block content %}
 
 	{# Set parameters for prev/next elements list #}
-	{% set params = craft.entries.section('narrativeProject') %}
+	{% set videoList = craft.entries.section('videos').type('video').descendantOf(entry.parent.id) %}
 
 	{# Get the prev/next elements #}
-	{% set prevEntry = entry.getPrev(params) %}
-	{% set nextEntry = entry.getNext(params) %}
-	{% set lastEntry = craft.entries.section('narrativeProject').last() %}
-	{% set firstEntry = craft.entries.section('narrativeProject').first() %}
+	{% set prevEntry = entry.getPrev(videoList) %}
+	{% set nextEntry = entry.getNext(videoList) %}
+	{% set lastEntry = videoList.last() %}
+	{% set firstEntry = videoList.first() %}
 
 	{# loop entries #}
 	{% if prevEntry %}
-		{% set prevEntry = entry.getPrev(params) %}
+		{% set prevEntry = entry.getPrev(videoList) %}
 	{% else %}
 		{% set prevEntry = lastEntry %}
 	{% endif %}
 
 	{% if nextEntry %}
-		{% set nextEntry = entry.getNext(params) %}
+		{% set nextEntry = entry.getNext(videoList) %}
 	{% else %}
 		{% set nextEntry = firstEntry %}
 	{% endif %}
@@ -47,30 +47,30 @@
 
     {% include 'partials/featured-video-simple' %}
 
-    <section class="narrative__details">
-    	<section class="narrative__intro">
+    <section class="video-read__details">
+    	<section class="video-read__intro">
     		{% if entry.fancyTitle|length %}
     			{% for row in entry.fancyTitle %}
-		            <span class="narrative__large-title">{{ row.topLine }} <strong>{{ row.bottomLine }}</strong></span>
+		            <span class="video-read__large-title">{{ row.topLine }} <strong>{{ row.bottomLine }}</strong></span>
 		        {% endfor %}
 	        {% endif %}
             {% if entry.synopsis|length %}
-	            <section class="narrative__synopsis">
-	            	<h2 class="narrative__title"><span>[</span> Synopsis <span>]</span></h2>
+	            <section class="video-read__synopsis">
+	            	<h2 class="video-read__title"><span>[</span> Synopsis <span>]</span></h2>
 	            	{{ entry.synopsis }}
 	            </section>
 	        {% endif %}
     	</section>
 
     	{% if entry.videoPoster|length %}
-	    	<section class="narrative__poster">
+	    	<section class="video-read__poster">
 	    		<img src="{{ entry.videoPoster.one().url }}" alt="">
 	    	</section>
 	    {% endif %}
 
     	{% if entry.awards|length %}
-	    	<section class="narrative__awards">
-	    		<h2 class="narrative__title"><span>[</span> Awards <span>]</span></h2>
+	    	<section class="video-read__awards">
+	    		<h2 class="video-read__title"><span>[</span> Awards <span>]</span></h2>
 	    		{% for award in entry.awards %}
 		    		<div class="award">
 		    			{% if award.awardUrl|length %}
@@ -85,8 +85,8 @@
 	    {% endif %}
 
 	    {% if entry.festivals|length %}
-	    	<section class="narrative__festivals">
-	    		<h2 class="narrative__title"><span>[</span> Festivals <span>]</span></h2>
+	    	<section class="video-read__festivals">
+	    		<h2 class="video-read__title"><span>[</span> Festivals <span>]</span></h2>
 	    		<ul class="festivals">
 	    			{% for festival in entry.festivals %}
 	    				{% if festival.festivalUrl|length %}
@@ -100,8 +100,8 @@
 	    {% endif %}
 
 	    {% if entry.press|length %}
-	    	<section class="narrative__press">
-	    		<h2 class="narrative__title"><span>[</span> Press <span>]</span></h2>
+	    	<section class="video-read__press">
+	    		<h2 class="video-read__title"><span>[</span> Press <span>]</span></h2>
 	    		<ul class="press">
 	    			{% for press in entry.press %}
 	    				{% if press.pressUrl|length %}
@@ -115,11 +115,11 @@
 	    {% endif %}
 
 	    {% if entry.additionalInformation|length %}
-	    	<section class="narrative__additional-info">
+	    	<section class="video-read__additional-info">
 	    		{% for block in entry.additionalInformation %}
-		    		<div class="narrative__block">
+		    		<div class="video-read__block">
 			    		{% if block.blockTitle|length %}
-				    		<h2 class="narrative__title"><span>[</span> {{ block.blockTitle}} <span>]</span></h2>
+				    		<h2 class="video-read__title"><span>[</span> {{ block.blockTitle}} <span>]</span></h2>
 				    	{% endif %}
 				    	{% if block.blockList|length %}
 				    		<ul>
