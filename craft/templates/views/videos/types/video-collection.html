@@ -3,6 +3,8 @@
 	<section class="page-header">
 		<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
 		<p>{% if entry.pageHeaderCopy|length %}{{ entry.pageHeaderCopy }}{% endif %}</p>
+
+		<span class="svg-pattern-container collection-header">{{ svg('@webroot/images/interface/svg-pattern.svg') }}</span>
 	</section>
 
     {% include 'partials/featured-video' %}

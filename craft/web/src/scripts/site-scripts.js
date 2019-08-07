@@ -3,7 +3,9 @@ window.addEventListener("load", function(){
     //vars
     var nav = $('.nav');
     var homePageHeader = $('.js--page-header');
-    var homeNavBrand = $('.js--site-branding');
+    var homeNavBrand = $('.js--site-branding-home');
+    var navBrand = $('.js--site-branding');
+    // var siteTag = $('.js--site-branding__tag');
     var scrollTop = $(window).scrollTop();
 
     // on load add nav bg
@@ -26,6 +28,12 @@ window.addEventListener("load", function(){
             homePageHeader.removeClass('scrolled');
             homeNavBrand.addClass('hide');
         }
+
+        // if (scrollTop > 400) {
+        //     navBrand.addClass('simple');
+        // } else {
+        //     navBrand.removeClass('simple');
+        // }
     });
 
     // fancybox settings 

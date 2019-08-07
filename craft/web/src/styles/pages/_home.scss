@@ -1,0 +1,27 @@
+.svg-pattern-container {
+	position: absolute;
+	display: block;
+	opacity: 0.9;
+	
+	&.home-header {
+		@include column(6);
+		height: 26rem;
+		top: 16rem;
+		left: 0;
+
+		.svg-pattern__shape {
+			fill: #ed453e;
+		}
+	}
+
+	&.collection-header {
+		@include column(6);
+		height: 35rem;
+		bottom: -6rem;
+		left: 0;
+
+		.svg-pattern__shape {
+			fill: #ed453e;
+		}
+	}
+}

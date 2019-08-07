@@ -6,6 +6,13 @@
 	align-content: flex-start;
 	padding: 12rem 6rem 20rem;
 	margin-bottom: -15rem;
+	position: relative;
+
+	h1, h2, p {
+		position: relative;
+		display: block;
+		z-index: 1;
+	}
 
 	h1 {
 		width: 100%;
@@ -82,6 +89,9 @@
 }
 
 .page-header-copy {
+	position: relative;
+	display: block;
+	z-index: 1;
 
 	.home & {
 		display: flex;

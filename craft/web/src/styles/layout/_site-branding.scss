@@ -38,6 +38,12 @@
 			}
 		}
 	}
+
+	.simple & {
+		>span {
+			display: inline-block;
+		}
+	}
 }
 
 .site-branding__tag {
@@ -59,12 +65,21 @@
 			}
 		}
 	}
+
+	.simple & {
+		margin-bottom: -2.5rem;
+
+		>span >span {
+			transform: translateX(-100%);
+		}
+	}
 }
 
 .site-title, .page-header h1.site-title {
 	font-weight: 200;
 	text-transform: uppercase;
 	transition: 0.35s ease all;
+	line-height: 0.8;
 
 	strong {
 		font-weight: 700;
@@ -81,4 +96,5 @@
 	font-size: 8rem;
 	transition: 0.35s ease all;
 	transition-delay: 0.35s;
+	line-height: 0.8;
 }
