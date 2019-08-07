@@ -2,6 +2,9 @@ window.addEventListener("load", function(){
 
     //vars
     var nav = $('.nav');
+    var homePageHeader = $('.js--page-header');
+    // var homeSiteTitle = $('.js--page-header.site-title');
+    // var homeSiteSubTitle = $('.js--page-header.site-subtitle');
     var scrollTop = $(window).scrollTop();
 
     // on load add nav bg
@@ -17,8 +20,14 @@ window.addEventListener("load", function(){
 
         if (scrollTop > 60) {
             nav.addClass('scrolled');
+            homePageHeader.addClass('scrolled');
+            // homeSiteTitle.addClass('scrolled');
+            // homeSiteSubTitle.addClass('scrolled');
         } else {
             nav.removeClass('scrolled');
+            homePageHeader.removeClass('scrolled');
+            // homeSiteTitle.removeClass('scrolled');
+            // homeSiteSubTitle.removeClass('scrolled');
         }
     });
 

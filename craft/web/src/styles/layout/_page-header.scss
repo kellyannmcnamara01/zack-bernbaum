@@ -35,6 +35,12 @@
 			@include column(10);
 			margin: 0 auto;
 		}
+
+		>div:first-child {
+			overflow: hidden;
+			// transition: 0.35s ease all;
+			// transition-delay: 0.35s;
+		}
 	}
 }
 
@@ -85,6 +91,17 @@
 
 		>div {
 			@include column(5);
+		}
+	}
+}
+
+.js--page-header {
+	&.scrolled {
+		>div:first-child {
+			background: lightblue;
+		}
+		.site-title, .site-subtitle {
+			transform: translateX(-100%);
 		}
 	}
 }
