@@ -95,16 +95,16 @@
 	}
 }
 
-.js--page-header {
-	&.scrolled {
-		>div:first-child {
-			background: lightblue;
-		}
-		.site-title, .site-subtitle {
-			transform: translateX(-100%);
-		}
-	}
-}
+// .js--page-header {
+// 	&.scrolled {
+// 		>div:first-child {
+// 			background: lightblue;
+// 		}
+// 		.site-title, .site-subtitle {
+// 			transform: translateX(-100%);
+// 		}
+// 	}
+// }
 
 
 
