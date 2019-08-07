@@ -76,7 +76,7 @@
 	    	</section>
 	    {% endif %}
 
-    	{% if entry.awards|length %}
+    	{% if entry.awards|length and entry.awards[0].awardTitle|length %}
 	    	<section class="video-read__awards">
 	    		<h2 class="video-read__title"><span>[</span> Awards <span>]</span></h2>
 	    		{% for award in entry.awards %}
@@ -92,7 +92,7 @@
 	    	</section>
 	    {% endif %}
 
-	    {% if entry.festivals|length %}
+	    {% if entry.festivals|length and entry.festivals[0].festivalTitle|length %}
 	    	<section class="video-read__festivals">
 	    		<h2 class="video-read__title"><span>[</span> Festivals <span>]</span></h2>
 	    		<ul class="festivals">
@@ -107,7 +107,7 @@
 	    	</section>
 	    {% endif %}
 
-	    {% if entry.press|length %}
+	    {% if entry.press|length and entry.press[0].pressTitle|length %}
 	    	<section class="video-read__press">
 	    		<h2 class="video-read__title"><span>[</span> Press <span>]</span></h2>
 	    		<ul class="press">
@@ -122,7 +122,7 @@
 	    	</section>
 	    {% endif %}
 
-	    {% if entry.additionalInformation|length %}
+	    {% if entry.additionalInformation|length and entry.additionalInformation[0].blockTitle|length %}
 	    	<section class="video-read__additional-info">
 	    		{% for block in entry.additionalInformation %}
 		    		<div class="video-read__block">

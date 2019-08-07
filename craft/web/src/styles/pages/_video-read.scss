@@ -99,7 +99,7 @@
 .video-read__awards, .video-read__press {
 	@include column(12);
 	padding-right: 25%;
-	padding-bottom: 6rem;
+	padding-top: 6rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -108,7 +108,7 @@
 .video-read__festivals {
 	@include column(12);
 	padding-left: 25%;
-	padding-bottom: 6rem;
+	padding-top: 6rem;
 }
 
 .festivals {
@@ -129,6 +129,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	padding-top: 6rem;
 }
 
 .video-read__block {
