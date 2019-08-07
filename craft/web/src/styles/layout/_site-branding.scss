@@ -1,3 +1,66 @@
+.site-branding__title, .site-branding__tag {
+	font-family: $title-font;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	overflow: hidden;
+	display: block;
+
+	>span {
+		display: inline-block;
+		overflow: hidden;
+
+		>span {
+			display: block;
+			transform: translateX(0%);
+			transition: 0.35s ease all;
+		}
+	}
+
+	.hide & {
+		>span >span {
+			transform: translateX(-100%);
+		}
+	}
+}
+
+.site-branding__title {
+	font-size: 2.75rem;
+	color: #fff;
+
+	>span {
+		display: block;
+
+		&:nth-child(2) {
+			font-weight: 700;
+			> span {
+				transition-delay: 0.1s;
+			}
+		}
+	}
+}
+
+.site-branding__tag {
+	font-size: 2.25rem;
+	color: $yellow;
+	margin-top: 0px;
+
+	>span {
+
+		&:first-child {
+			>span {
+				transition-delay: 0.2s;
+			}
+		}
+
+		&:last-child {
+			>span {
+				transition-delay: 0.3s;
+			}
+		}
+	}
+}
+
 .site-title, .page-header h1.site-title {
 	font-weight: 200;
 	text-transform: uppercase;
