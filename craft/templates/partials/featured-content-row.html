@@ -18,7 +18,13 @@
         <div class="featured-content__imgs">
             {% for img in content.featuredVisuals %}
                 {% set imgSrc = img.url('featuredVisual') %}
-                <div class="featured-content__img"><img src="{{ imgSrc }}"></div>
+                {% set imgLink = img.linkUrl.getUrl() %}
+
+                {% if imgLink|length %}
+                    <a href="{{ imgLink }}" target="_blank" class="featured-content__img"><img src="{{ imgSrc }}" {% if img.altTag|length %}alt="{{ img.altTag }}"{% endif %}></a>
+                {% else %}
+                    <div class="featured-content__img"><img src="{{ imgSrc }}" {% if img.altTag|length %}alt="{{ img.altTag }}"{% endif %}></div>
+                {% endif %}
             {% endfor %}
         </div>
     {% endif %}
