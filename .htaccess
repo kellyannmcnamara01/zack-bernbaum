@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteCond %{REQUEST_URI} !^web
+   RewriteRule ^(.*)$ craft3/web/$1 [L]
+</IfModule>
