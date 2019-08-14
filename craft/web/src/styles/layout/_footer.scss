@@ -3,7 +3,7 @@
 }
 
 .footer__title {
-	@include column(7);
+	@include column(6);
 	display: block;
 	position: relative;
 
@@ -16,7 +16,7 @@
 	}
 
 	p, a {
-		@extend .title-large;
+		@extend .title-medium;
 	}
 	p {
 		font-weight: 100;
@@ -26,6 +26,7 @@
 	a {
 		text-transform: uppercase;
 		color: $yellow;
+		font-weight: 300;
 	}
 }
 

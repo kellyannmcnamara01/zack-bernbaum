@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
     var scrollTop = $(window).scrollTop();
 
     // on load add nav bg
-    if (scrollTop > 60) {
+    if (scrollTop > 35) {
         nav.addClass('scrolled');
     } else {
         nav.removeClass('scrolled');
@@ -19,7 +19,7 @@ window.addEventListener("load", function(){
     $(window).scroll(function(){
         var scrollTop = $(window).scrollTop();
 
-        if (scrollTop > 60) {
+        if (scrollTop > 35) {
             nav.addClass('scrolled');
             homePageHeader.addClass('scrolled');
             homeNavBrand.removeClass('hide');
@@ -41,6 +41,7 @@ window.addEventListener("load", function(){
         keyboard: true,
         preventCaptionOverlap: false, 
         infobar: false,
+        loop: true,
         buttons: [
             "slideShow",
             "thumbs",

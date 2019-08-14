@@ -52,9 +52,9 @@ a {
 	&::before, &::after {
 		content: '';
 		display: block;
-		height: 0.25em;
+		height: 0.175em;
 		position: absolute;
-		bottom: -0.2em;
+		bottom: -0.15em;
 		left: 50%;
 		transform: translateX(-50%);
 		transition: 0.35s ease all;

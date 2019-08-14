@@ -1,4 +1,8 @@
 {% block content %}
+
+	{# Set parameters for prev/next elements list #}
+	{% set videoList = craft.entries.section('videos').type('simpleVideo').descendantOf(entry.id) %}
+	{% set videos = craft.entries().descendantOf(entry.id).all() %}
 	
 	<section class="page-header">
 		<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
@@ -7,15 +11,10 @@
 		<span class="svg-pattern-container collection-header">{{ svg('@webroot/images/interface/svg-pattern.svg') }}</span>
 	</section>
 
-    {% include 'partials/featured-video' %}
+    {% include 'partials/featured-video' with { 'videos' : videos, 'videoList' : videoList } %}
     
 
     {% if entry.hasDescendants() %}
-
-    	{# Set parameters for prev/next elements list #}
-		{% set videoList = craft.entries.section('videos').type('simpleVideo').descendantOf(entry.id) %}
- 
-    	{% set videos = craft.entries().descendantOf(entry.id).all() %}
     	{% include 'partials/video-feed' with { 'videos' : videos, 'videoList' : videoList } %}
     {% endif %}
 
