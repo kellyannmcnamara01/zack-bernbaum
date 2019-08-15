@@ -6,7 +6,7 @@
 	padding: 0 6rem;
 
 	.video-title, .video-client, .video-summary {
-		width: 80%;
+		// width: 80%;
 		transition: 0.5s ease all;
 	}
 
@@ -21,6 +21,10 @@
 
 	.video-summary {
 		transition-delay: 0.25s;
+	}
+
+	@include tablet-large-below {
+		padding: 0 3rem;
 	}
 }
 
@@ -43,6 +47,22 @@
 		.video-thumb:before, .video-thumb:after {
 			opacity: 1;
 		}
+	}
+
+	@include tablet-large-below {
+		width: calc(33.333% - 2rem);
+	}
+
+	@include tablet-below {
+		width: calc(50% - 3rem);
+	}
+
+	@include tablet-small-below {
+		width: calc(50% - 2rem);
+	}
+
+	@include phone-large-below {
+		width: 100%;
 	}
 }
 
