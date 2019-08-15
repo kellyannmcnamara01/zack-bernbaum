@@ -3,9 +3,51 @@
 	padding: 0 6rem 6rem;
 	margin: 0 auto;
 	display: flex;
-	align-content: center;
+	// align-items: center;
 	position: relative;
-	// flex-wrap: wrap;
+	white-space: inherit;
+
+	&::before, &::after {
+		display: none;
+	}
+
+	&:hover {
+		.video-thumb {
+			&::before, &::after {
+				opacity: 1;
+			}
+		}
+
+		.video-thumb {
+			transform: translateY(-1rem);
+		}
+
+		.featured-video__content {
+			transform: translateY(-2rem);
+		}
+
+		.video-title, .video-client, .video-summary {
+			transform: translateY(-0.5rem);
+		}
+	}
+
+	@include desktop-below {
+		align-items: center;
+	}
+
+	@include tablet-large-below {
+		padding: 0 3rem 6rem;
+
+		&:hover {
+			.featured-video__content {
+				transform: translateY(-1rem);
+			}
+		}
+	}
+
+	@include tablet-small-below {
+		flex-wrap: wrap;
+	}
 }
 
 .featured-video__video {
@@ -21,6 +63,24 @@
 		@include column(10);
 		margin: 0 auto;
 	}
+
+	@include desktop-below {
+		@include column(6.5);
+	}
+
+	@include tablet-large-below {
+		display: flex;
+		align-items: center;
+	}
+
+	@include tablet-small-below {
+		@include column(10);
+		display: block;
+	}
+
+	@include phone-large-below {
+		@include column(12);
+	}
 }
 
 .featured-video__content {
@@ -32,6 +92,44 @@
 	align-content: center;
 	margin: 5rem 0;
 	box-shadow: 10px 10px 30px rgba($darkblue, 0.33);
+	transition: all .5s ease;
+	transition-delay: 0.1s;
+	// min-height: 300px;
+
+	.video-title {
+		transition-delay: 0.2s;
+	}
+
+	.video-client {
+		transition-delay: 0.3s;
+	}
+
+	.video-summary {
+		transition-delay: 0.3s;
+	}
+
+	@include desktop-below {
+		@include column(5.5);
+	}
+
+	@include tablet-large-below {
+		margin: 0;
+	}
+
+	@include tablet-small-below {
+		@include column(10);
+		margin: -4rem 0 0 16.666%;
+		position: relative;
+	}
+
+	@include phone-large-below {
+		@include column(12);
+		margin: 0;
+	}
+
+	@include phone {
+		padding: 2rem;
+	}
 }
 
 .video-title {
@@ -39,6 +137,7 @@
 	color: $yellow;
 	width: 100%;
 	text-transform: uppercase;
+	transition: all .5s ease;
 
 	a {
 		white-space: inherit;
@@ -54,8 +153,10 @@
 	color: $yellow;
 	width: 100%;
 	text-transform: uppercase;
+	transition: all .5s ease;
 }
 
 .video-summary {
 	padding-top: 2rem;
+	transition: all .5s ease;
 }

@@ -52,6 +52,10 @@
 			// transition-delay: 0.35s;
 		}
 	}
+
+	@include tablet-large-below {
+		padding: 12rem 3rem 20rem;
+	}
 }
 
 .page-header__content {
