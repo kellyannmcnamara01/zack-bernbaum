@@ -9,6 +9,10 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	@extend .title-element;
+
+	@include phone-large-below {
+		font-size: 7.5rem;
+	}
 }
 
 .title-large {
@@ -26,6 +30,10 @@
 .title-small {
 	font-size: 3rem;
 	@extend .title-element;
+
+	@include phone-large-below {
+		font-size: 3.5rem;
+	}
 }
 
 p {

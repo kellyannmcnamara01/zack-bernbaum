@@ -70,6 +70,10 @@
 .page-header__content {
 	.spilt & {
 		@include column(8);
+
+		@include tablet-large-below {
+			@include column(12);
+		}
 	}
 }
 
@@ -78,12 +82,26 @@
 	align-content: flex-end;
 	flex-wrap: wrap;
 	@include column(3.5);
+
+	@include tablet-large-below {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		position: relative;
+		z-index: 1;
+		padding-top: 2rem;
+		@include column(12);
+	}
+
+	@include phone-large-below {
+		flex-wrap: wrap;
+	}
 }
 
 .page-header__nav-link {
 	margin-bottom: 1.5rem;
 	width: 100%;
 	font-weight: 300;
+	white-space: inherit;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -101,6 +119,37 @@
 	.title {
 		font-size: 2.25rem;
 		color: #fff;
+	}
+
+	@include tablet-large-below {
+		// @include column(6);
+		width: auto;
+
+		&.next {
+			text-align: right;
+			padding-left: 2rem;
+		}
+
+		&.prev {
+			padding-right: 2rem;
+		}
+
+		.pretitle {
+			padding-bottom: 3px;
+		}
+	}
+
+	@include phone-large-below {
+		width: 100%;
+
+		&.next {
+			text-align: left;
+			padding-left: 0;
+		}
+
+		&.prev {
+			padding-right: 0;
+		}
 	}
 }
 

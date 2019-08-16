@@ -26,6 +26,23 @@
 				color: $yellow;
 			}
 		}
+
+		@include desktop-below {
+			@include column(6);
+		}
+
+		@include tablet-below {
+			@include column(4);
+		}
+
+		@include tablet-small-below {
+			@include column(6);
+		}
+
+		@include phone-large-below {
+			@include column(12);
+			padding-right: 0;
+		}
 	}
 
 	.title {
@@ -33,6 +50,10 @@
 		font-weight: 700;
 		line-height: 1.2;
 		margin-bottom: 5px;
+
+		@include phone-large-below {
+			font-size: 2.2rem;
+		}
 	}
 
 	.detail {
@@ -40,6 +61,10 @@
 		line-height: 1.2;
 		font-weight: 300;
 		color: #fff;
+
+		@include phone-large-below {
+			font-size: 2.2rem;
+		}
 	}
 
 	li {
@@ -49,18 +74,44 @@
 		padding-bottom: 2rem;
 		padding-right: 3rem;
 		font-weight: 300;
+
+		@include phone-large-below {
+			font-size: 2.2rem;
+		}
+
+		@include phone-large-below {
+			padding-right: 0;
+		}
+	}
+
+	@include tablet-large-below {
+		padding: 0 3rem;
 	}
 }
 
 .video-read__intro {
 	@include column(6);
 	align-self: center;
+
+	@include tablet-large-below {
+		@include column(7.5);
+		padding-right: 3rem;
+	}
+
+	@include tablet-below {
+		@include column(12);
+	}
+
+	@include phone-large-below {
+		@include column(12);
+		padding-right: 0;
+	}
 }
 
 .video-read__large-title {
 	@extend .title-large;
 	font-weight: 300;
-	@include column(6);
+	@include column(8);
 	display: block;
 	text-transform: uppercase;
 
@@ -68,12 +119,31 @@
 		font-weight: 700;
 		display: block;
 	}
+
+	@include desktop-below {
+		@include column(10);
+	}
+
+	@include tablet-large-below {
+		@include column(10);
+		font-size: 5.5rem;
+	}
+
+	@include phone-large-below {
+		@include column(12);
+	}
 }
 
 .video-read__synopsis {
 	padding-left: 8.333%;
-	width: calc(100% - 8.333%);
+	// width: calc(100% - 8.333%);
+	width: 100%;
 	margin-top: 5rem;
+
+	@include tablet-large-below {
+		@include column(12);
+		padding-left: 0;
+	}
 }
 
 .video-read__title {
@@ -82,6 +152,7 @@
 	padding-bottom: 2rem;
 	font-weight: 700;
 	width: 100%;
+	white-space: nowrap;
 
 	span {
 		color: $red;
@@ -94,6 +165,16 @@
 	img {
 		width: 100%;
 	}
+
+	@include tablet-large-below {
+		@include column(4.5);
+	}
+
+	@include tablet-below {
+		@include column(12);
+		padding-top: 6rem;
+		// max-width: 400px;
+	}
 }
 
 .video-read__awards, .video-read__press {
@@ -103,33 +184,66 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	margin-bottom: -2.5rem;
+
+	@include desktop-below {
+		padding-right: 33.333%;
+	}
+
+	@include tablet-below {
+		padding-right: 0;
+	}
 }
 
 .video-read__festivals {
 	@include column(12);
 	padding-left: 25%;
 	padding-top: 6rem;
+
+	@include desktop-below {
+		padding-left: 33.333%;
+	}
+
+	@include tablet-below {
+		padding-left: 0;
+	}
 }
 
 .festivals {
 	column-count: 3;
-}
 
-// .festival {
-// 	font-size: 1.7rem;
-// 	line-height: 1.2;
-// 	color: #fff;
-// 	padding-bottom: 2rem;
-// 	padding-right: 3rem;
-// 	font-weight: 300;
-// }
+	@include desktop-below {
+		column-count: 2;
+	}
+
+	@include tablet-below {
+		column-count: 3;
+	}
+
+	@include tablet-small-below {
+		column-count: 2;
+	}
+
+	@include phone-large-below {
+		column-count: 1;
+	}
+}
 
 .video-read__additional-info {
 	@include column(12);
+	padding-right: 25%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	padding-top: 6rem;
+
+	@include desktop-below {
+		padding-right: 33.333%;
+	}
+
+	@include tablet-below {
+		padding-right: 0;
+	}
 }
 
 .video-read__block {
@@ -148,6 +262,23 @@
 		&:hover, &:focus {
 			color: $yellow;
 		}
+	}
+
+	@include desktop-below {
+		@include column(6);
+	}
+
+	@include tablet-below {
+		@include column(4);
+	}
+
+	@include tablet-small-below {
+		@include column(6);
+	}
+
+	@include phone-large-below {
+		@include column(12);
+		padding-right: 0;
 	}
 }
 
