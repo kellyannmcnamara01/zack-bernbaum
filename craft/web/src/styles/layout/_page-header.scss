@@ -49,12 +49,18 @@
 		>div {
 			@include column(10);
 			margin: 0 auto;
+
+			@include desktop-below {
+				@include column(12);
+			}
 		}
 
 		>div:first-child {
 			overflow: hidden;
-			// transition: 0.35s ease all;
-			// transition-delay: 0.35s;
+		}
+
+		@include phone-large-below {
+			padding-top: 7rem;
 		}
 	}
 
@@ -166,6 +172,18 @@
 
 		>div {
 			@include column(5);
+
+			@include desktop-below {
+				@include column(7);
+			}
+
+			@include tablet-below {
+				@include column(10);
+			}
+
+			@include phone-large-below {
+				@include column(12);
+			}
 		}
 	}
 }

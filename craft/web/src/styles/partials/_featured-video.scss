@@ -63,9 +63,13 @@
 		@include column(10);
 		margin: 0 auto;
 
+		@include desktop-below {
+			@include column(12);
+		}
+
 		@include tablet-large-below {
 			display: block;
-			@include column(12);
+			// @include column(12);
 		}
 	}
 
