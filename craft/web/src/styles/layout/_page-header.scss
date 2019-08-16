@@ -4,9 +4,14 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: flex-start;
-	padding: 12rem 6rem 20rem;
-	margin-bottom: -15rem;
+	padding: 12rem 6rem 15rem;
+	margin-bottom: -10rem;
 	position: relative;
+
+	&.has-featured-video {
+		padding-bottom: 20rem;
+		margin-bottom: -15rem;
+	}
 
 	h1, h2, p {
 		position: relative;
@@ -54,7 +59,11 @@
 	}
 
 	@include tablet-large-below {
-		padding: 12rem 3rem 20rem;
+		padding: 12rem 3rem 15rem;
+
+		p {
+			max-width: none;
+		}
 	}
 }
 

@@ -1,5 +1,9 @@
 .footer {
 	padding: 11rem 6rem 6rem;
+
+	@include tablet-large-below {
+		padding: 11rem 3rem 6rem;
+	}
 }
 
 .footer__title {
@@ -28,6 +32,22 @@
 		color: $yellow;
 		font-weight: 300;
 	}
+
+	@include desktop-below {
+		@include column(8);
+	}
+
+	@include tablet-small-below {
+		@include column(10);
+	}
+
+	@include phone-large-below {
+		@include column(12);
+
+		&::before {
+			max-width: 250px;
+		}
+	}
 }
 
 .footer__links {
@@ -40,6 +60,14 @@
 .footer__links-contact {
 	a {
 		margin-bottom: 2rem;
+	}
+
+	@include phone-large-below {
+		@include column(12);
+
+		a {
+			font-size: 2rem;
+		}
 	}
 }
 

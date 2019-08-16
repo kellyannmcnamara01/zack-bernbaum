@@ -2,7 +2,7 @@
 {% block content %}
 
 
-    <section class="page-header js--page-header">
+    <section class="page-header js--page-header {% if entry.video|length %}has-featured-video{% endif %}">
         <div>
             <h1 class="site-title">Zack <strong>Bernbaum</strong></h1>
             <h2 class="site-subtitle">Storyteller. Director.</h2>

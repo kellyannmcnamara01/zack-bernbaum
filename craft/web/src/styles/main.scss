@@ -29,6 +29,10 @@ body {
     background-color: $blue;
     font-feature-settings: "liga" 0;
     font-size: 1.6rem;
+
+    @include phone-large-below {
+        font-size: 2rem;
+    }
 }
 
 .wrapper {

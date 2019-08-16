@@ -4,7 +4,7 @@
 	{% set videoList = craft.entries.section('videos').type('simpleVideo').descendantOf(entry.id) %}
 	{% set videos = craft.entries().descendantOf(entry.id).all() %}
 	
-	<section class="page-header">
+	<section class="page-header {% if entry.video|length %}has-featured-video{% endif %}">
 		<h1>{% if entry.onPageTitle|length %}{{ entry.onPageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
 		<p>{% if entry.pageHeaderCopy|length %}{{ entry.pageHeaderCopy }}{% endif %}</p>
 
