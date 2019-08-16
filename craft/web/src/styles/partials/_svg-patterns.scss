@@ -24,4 +24,21 @@
 			fill: #ed453e;
 		}
 	}
+
+	&.video-read-one {
+		@include column(3.6);
+		z-index: -1;
+		top: 5rem;
+		left: -5rem;
+		height: 30rem;
+	}
+
+	&.video-read-two {
+		@include column(5);
+		z-index: -1;
+		bottom: 3rem;
+		right: -5rem;
+		height: 20rem;
+		opacity: 0.5;
+	}
 }
