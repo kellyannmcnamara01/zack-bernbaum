@@ -1,3 +1,8 @@
+.site-branding {
+	display: block;
+	z-index: 999;
+}
+
 .site-branding__title, .site-branding__tag {
 	font-family: $title-font;
 	font-weight: 300;

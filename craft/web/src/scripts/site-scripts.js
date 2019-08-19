@@ -2,6 +2,7 @@ window.addEventListener("load", function(){
 
     //vars
     var nav = $('.nav');
+    var mobileNav = $('.mobile-nav');
     var homePageHeader = $('.js--page-header');
     var homeNavBrand = $('.js--site-branding-home');
     var navBrand = $('.js--site-branding');
@@ -21,19 +22,24 @@ window.addEventListener("load", function(){
 
         if (scrollTop > 35) {
             nav.addClass('scrolled');
+            mobileNav.addClass('scrolled');
             homePageHeader.addClass('scrolled');
             homeNavBrand.removeClass('hide');
         } else {
             nav.removeClass('scrolled');
+            mobileNav.removeClass('scrolled');
             homePageHeader.removeClass('scrolled');
             homeNavBrand.addClass('hide');
         }
+    });
 
-        // if (scrollTop > 400) {
-        //     navBrand.addClass('simple');
-        // } else {
-        //     navBrand.removeClass('simple');
-        // }
+    // mobile nav
+    $('.js--mobile-nav-btn').click(function(e){
+        e.preventDefault();
+
+        $(this).toggleClass('open');
+        mobileNav.toggleClass('open');
+        $('.js--mobile-links').slideToggle();
     });
 
     // fancybox settings 
