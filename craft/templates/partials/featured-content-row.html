@@ -1,14 +1,16 @@
 <section class="featured-content">
     <div class="featured-content__copy">
         {% if content.featuredTitle|length %}
-            <h3>Featured <strong>Clients</strong></h3>
+            {% for row in content.featuredTitle %}
+                <h3>{{ row.topLine }} <strong>{{ row.bottomLine }}</strong></h3>
+            {% endfor %}
         {% endif %}
         {% if content.featuredStats|length %}
             <div class="featured-content__stats">
                 {% for stat in content.featuredStats %}
                     <div class="featured-content__stat">
-                        <span>Total Clients</span>
-                        <span><span>[ </span>00<span> ]</span></span>
+                        {% if stat.statTitle|length %}<span>{{ stat.statTitle }}</span>{% endif %}
+                        {% if stat.statResults|length %}<span><span>[ </span>{{ stat.statResults }}<span> ]</span></span>{% endif %}
                     </div>
                 {% endfor %}
             </div>
