@@ -273,6 +273,34 @@
 	}
 }
 
+.press {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: flex-start;
+
+	li {
+		@include column(4);
+		padding-right: 3rem;
+
+		@include desktop-below {
+			@include column(6);
+		}
+
+		@include tablet-below {
+			@include column(4);
+		}
+
+		@include tablet-small-below {
+			@include column(6);
+		}
+
+		@include phone-large-below {
+			@include column(12);
+		}
+	}
+}
+
 .video-read__additional-info {
 	@include column(12);
 	padding-right: 25%;
