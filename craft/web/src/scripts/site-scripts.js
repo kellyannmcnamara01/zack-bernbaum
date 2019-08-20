@@ -42,6 +42,13 @@ window.addEventListener("load", function(){
         $('.js--mobile-links').slideToggle();
     });
 
+    $('.js--mobile-links').click(function(){
+
+        $(this).removeClass('open');
+        mobileNav.removeClass('open');
+        $('.js--mobile-links').slideUp();
+    });
+
     // fancybox settings 
     $('[data-fancybox="gallery"]').fancybox({
         keyboard: true,
