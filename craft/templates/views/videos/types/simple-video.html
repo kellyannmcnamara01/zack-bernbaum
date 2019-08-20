@@ -1,0 +1,9 @@
+{% block content %}
+
+	{% if entry.parent|length%}
+		{% redirect entry.parent.uri %}
+	{% else %}
+		{% redirect '/' %}
+	{% endif %}
+
+{% endblock %}
