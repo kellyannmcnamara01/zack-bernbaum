@@ -15,7 +15,7 @@
                     {% for img in video.videoThumb.all() %}
                         {% set imgSrc = img.url('videoThumb') %}
                             <div class="video-thumb">
-                                <img src="{{ imgSrc }}">
+                                <img src="{{ imgSrc }}" {% if img.altTag|length %}alt="{{ img.altTag }}"{% endif %}>
                             </div>
                     {% endfor %}
                 {% endif %}

@@ -74,7 +74,7 @@
 
     	{% if entry.videoPoster|length %}
 	    	<section class="video-read__poster">
-	    		<img src="{{ entry.videoPoster.one().url }}" alt="">
+	    		<img src="{{ entry.videoPoster.one().url }}" {% if entry.videoPoster.one().altTag|length %}alt="{{ entry.videoPoster.one().altTag }}"{% endif %}>
 	    	</section>
 	    {% endif %}
 
