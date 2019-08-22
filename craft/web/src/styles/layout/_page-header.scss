@@ -40,10 +40,12 @@
 
 	.home & {
 
-		padding-top: 2rem;
+		padding-top: 0rem;
+		padding: 1.5rem 9rem 15rem;
 
 		p {
 			max-width: none;
+			margin-bottom: 1rem;
 		}
 
 		>div {
@@ -61,6 +63,27 @@
 
 		@include phone-large-below {
 			padding-top: 7rem;
+		}
+
+		&.has-featured-video {
+			// margin-bottom: -11rem;
+			margin-bottom: -21rem;
+
+			@include desktop-small-below {
+				margin-bottom: -11rem;
+			}
+
+			@include desktop-below {
+				// margin-bottom: -11rem;
+			}
+		}
+
+		@include tablet-large-below {
+			padding: 7rem 3rem 15rem;
+
+			p {
+				max-width: none;
+			}
 		}
 	}
 
@@ -171,14 +194,14 @@
 		padding-top: 2rem;
 
 		>div {
-			@include column(5);
+			@include column(8);
 
-			@include desktop-below {
-				@include column(7);
+			@include desktop-small-below {
+				@include column(9);
 			}
 
 			@include tablet-below {
-				@include column(10);
+				@include column(12);
 			}
 
 			@include phone-large-below {

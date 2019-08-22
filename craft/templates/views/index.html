@@ -19,8 +19,9 @@
         <span class="svg-pattern-container home-header">{{ svg('@webroot/images/interface/svg-pattern.svg') }}</span>
     </section>
 
-
-    {% include 'partials/featured-video-simple' %}
+    <div class="home-video">
+        {% include 'partials/featured-video-simple' %}
+    </div>
 
 
     {% if entry.featuredContent|length %}
