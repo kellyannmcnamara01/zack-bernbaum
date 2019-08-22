@@ -65,12 +65,10 @@ body {
     padding: 8rem;
 
     @include desktop-small-below {
-        background: lightblue;
         padding: 0 3rem;
     }
 
     @include desktop-below {
-        background: lightgreen;
         padding: 0;
     }
 }
