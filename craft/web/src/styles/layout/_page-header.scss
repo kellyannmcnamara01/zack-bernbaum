@@ -66,8 +66,8 @@
 		}
 
 		&.has-featured-video {
-			// margin-bottom: -11rem;
-			margin-bottom: -21rem;
+			margin-bottom: -11rem;
+			// margin-bottom: -15rem;
 
 			@include desktop-small-below {
 				margin-bottom: -11rem;
@@ -194,10 +194,14 @@
 		padding-top: 2rem;
 
 		>div {
-			@include column(8);
+			@include column(7.8);
 
 			@include desktop-small-below {
-				@include column(9);
+				@include column(7.55);
+			}
+
+			@include tablet-large-below {
+				@include column(7.4);
 			}
 
 			@include tablet-below {
