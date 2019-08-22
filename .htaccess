@@ -1,6 +1,7 @@
-<IfModule mod_rewrite.c>
-	RewriteEngine on
-
-	RewriteCond %{REQUEST_URI} !^web
-   RewriteRule ^(.*)$ craft3/web/$1 [L]
-</IfModule>
+# <IfModule mod_rewrite.c>
+	# RewriteEngine on
+	# RewriteCond %{HTTP_HOST} ^zackbernbaum.com$ [NC,OR]
+	# RewriteCond %{HTTP_HOST} ^www.zackbernbaum.com$
+	# RewriteCond %{REQUEST_URI} !craft/web/
+	# RewriteRule (.*) /craft/web/$1 [L]
+# </IfModule>
