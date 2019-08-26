@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<meta name="robots" content="noindex, nofollow">
+		<title>{% if metaTags.metaTitle|length %}{{ metaTags.metaTitle }}{% else %}{{ currentSite.name }}{% endif %} | {{ entry.title }}</title>
+		<meta name="description" caption="{% if metaTags.metaDescription|length %}{{ metaTags.metaDescription }}{% else %}Award-winning director with a passion to tell stories. Capturing authentic performances, cinematic visuals, and unique tones.{% endif %}">
+
+		<meta name="robots" content="index, follow">
 		<meta charset="utf-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,9 +14,10 @@
 	    <script src="/dist/scripts/main.min.js?v5" type="text/javascript"></script>
 	    {% do view.registerCssFile("/fonts/site_icons/style.css", {"async":"async"}) %}
 	    {% do view.registerCssFile("/dist/styles/main.css?v6", {"async":"async"}) %}
+
+
 	</head>
 
 	<body>
-
 	<!-- </body>
 </html> -->
