@@ -7,8 +7,8 @@
 	background: none;
 
 	@include phone-large-below {
-		margin: 3rem 0;
-		padding: 0 5rem;
+		margin: 3rem 0 7rem;
+		// padding: 0 5rem;
 	}
 }
 
@@ -216,3 +216,15 @@
 .fancybox-close-small {
 	display: none;
 }
+
+.fancybox-navigation .fancybox-button {
+	@include phone-large-below {
+		top: 100%;
+		transform: translateY(-100%);
+	}
+}
+
+
+
+
+
